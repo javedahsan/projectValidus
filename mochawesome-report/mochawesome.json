@@ -1,0 +1,292 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2019-08-31T14:41:10.701Z",
+    "end": "2019-08-31T14:41:19.171Z",
+    "duration": 8470,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ed0c4409-2811-4c2c-942c-a34d39634a5f",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "06d9ee87-ddea-4fa8-8f4b-677251fd9f49",
+          "title": "Test Suite",
+          "fullFile": "D:\\projectValidus\\test\\test-01-homePage.js",
+          "file": "\\test\\test-01-homePage.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook",
+              "fullTitle": "Test Suite \"before each\" hook",
+              "timedOut": false,
+              "duration": 259,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get(\"http://opensource-demo.orangehrmlive.com/\");\ndriver.wait(until.titleIs('OrangeHRM'), 1000);",
+              "err": {},
+              "uuid": "33efe0ab-ea2f-4836-a7a6-3b053ea6525e",
+              "parentUUID": "06d9ee87-ddea-4fa8-8f4b-677251fd9f49",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook",
+              "fullTitle": "Test Suite \"after all\" hook",
+              "timedOut": false,
+              "duration": 191,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();\n        //  .quite();",
+              "err": {},
+              "uuid": "0bea5efd-b079-4ebb-b82d-5750dd481b47",
+              "parentUUID": "06d9ee87-ddea-4fa8-8f4b-677251fd9f49",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "bcf8e074-0a1f-49c6-a899-0fa92448b506",
+              "title": "should display on login page",
+              "fullFile": "D:\\projectValidus\\test\\test-01-homePage.js",
+              "file": "\\test\\test-01-homePage.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should display page title",
+                  "fullTitle": "Test Suite should display on login page should display page title",
+                  "timedOut": false,
+                  "duration": 23,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var title = await driver.getTitle();\nconsole.log(\"Title\", title);\nexpect(title).is.equal(\"OrangeHRM\");",
+                  "err": {},
+                  "uuid": "b6a6d793-4c44-4e38-b929-f60ecf6a6654",
+                  "parentUUID": "bcf8e074-0a1f-49c6-a899-0fa92448b506",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should display page logo",
+                  "fullTitle": "Test Suite should display on login page should display page logo",
+                  "timedOut": false,
+                  "duration": 56,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// var element = await driver.findElement(By.id(\"divLogo\"));\nvar rstlogo = await driver.findElement(By.xpath(\"//img[contains(@src, 'logo')]\")).getAttribute (\"src\");\nconsole.log(\"Logo Image:\", rstlogo);\nexpect(rstlogo).contains(\"logo.png\");",
+                  "err": {},
+                  "uuid": "3bac596a-f669-4b8a-83b2-2e79ea281507",
+                  "parentUUID": "bcf8e074-0a1f-49c6-a899-0fa92448b506",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should display helping instruction detail",
+                  "fullTitle": "Test Suite should display on login page should display helping instruction detail",
+                  "timedOut": false,
+                  "duration": 48,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var rstHelping = await driver.findElement(By.id(\"content\")).findElement(By.tagName(\"span\"));\nrstHelping.getText().then(function(txt){\n  console.log('Entry', txt);\n  expect(txt).contains(\"Username : Admin\");\n  expect(txt).contains(\"Password : admin123\");\n  });",
+                  "err": {},
+                  "uuid": "1cada8f1-cd87-4f76-bc07-2e49ff8821e4",
+                  "parentUUID": "bcf8e074-0a1f-49c6-a899-0fa92448b506",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should display alternative login detail",
+                  "fullTitle": "Test Suite should display on login page should display alternative login detail",
+                  "timedOut": false,
+                  "duration": 48,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var rstForm = await driver.findElement(By.id(\"openIDForm\")).findElements(By.tagName(\"input\"));\nrstForm.forEach(function(element){\n  element.getAttribute('name').then(function(nameAttr){\n    console.log(\"Name Attribute\", nameAttr)\n    // add expection validation\n  });\n  element.getAttribute('value').then(function(valueAttr){\n    console.log(\"Value Attribute\", valueAttr)\n    // expectation validation \n  });\n});",
+                  "err": {},
+                  "uuid": "a14c5917-ce7c-422f-a058-e78348a075e3",
+                  "parentUUID": "bcf8e074-0a1f-49c6-a899-0fa92448b506",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should display Text in footer",
+                  "fullTitle": "Test Suite should display on login page should display Text in footer",
+                  "timedOut": false,
+                  "duration": 52,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var rstFooterTxt = await driver.findElement(By.id(\"footer\")).findElements(By.tagName(\"div\"));\n  var txtArray = [];\n  rstFooterTxt.forEach(function(element){\n    element.getText().then(function(txt){\n       console.log(\"Footer text\", txt);\n       txtArray.push(txt);\n      console.log(\"txtArray:\", txtArray);\n      });\n  });\n  // expectation validation  \n  // console.log(\"txtArray:\", txtArray[0], txtArray[1]);",
+                  "err": {},
+                  "uuid": "cbe76d64-ac25-4598-a325-ccccf5791222",
+                  "parentUUID": "bcf8e074-0a1f-49c6-a899-0fa92448b506",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "find login Panel Heading",
+                  "fullTitle": "Test Suite should display on login page find login Panel Heading",
+                  "timedOut": false,
+                  "duration": 28,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var element = await driver.findElement(By.id(\"logInPanelHeading\"));\nelement.getText().then(function(txt){\n console.log(\"Login Heading Pannel\", txt);\n expect(txt).is.equal(\"LOGIN Panel\");\n});",
+                  "err": {},
+                  "uuid": "54831ca2-6e48-490c-83b7-22ce0647befc",
+                  "parentUUID": "bcf8e074-0a1f-49c6-a899-0fa92448b506",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "b6a6d793-4c44-4e38-b929-f60ecf6a6654",
+                "3bac596a-f669-4b8a-83b2-2e79ea281507",
+                "1cada8f1-cd87-4f76-bc07-2e49ff8821e4",
+                "a14c5917-ce7c-422f-a058-e78348a075e3",
+                "cbe76d64-ac25-4598-a325-ccccf5791222",
+                "54831ca2-6e48-490c-83b7-22ce0647befc"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 255,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 50000
+            },
+            {
+              "uuid": "ea3353c8-e2bd-4107-8af3-ed0c09240dcb",
+              "title": "should display on home page",
+              "fullFile": "D:\\projectValidus\\test\\test-01-homePage.js",
+              "file": "\\test\\test-01-homePage.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "find welcome menu on home page",
+                  "fullTitle": "Test Suite should display on home page find welcome menu on home page",
+                  "timedOut": false,
+                  "duration": 1520,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var searchUserName =  await driver.findElement(By.id(\"txtUsername\")).sendKeys('Admin');\n  \nvar searchPassword =  await driver.findElement(By.id(\"txtPassword\")).sendKeys('admin123');\nvar loginBtn =  await driver.findElement(By.id(\"btnLogin\")).click();  \n\nvar result =  await driver.findElement(By.id(\"welcome\"))\nresult.getText().then(function(txt){\n  console.log(\"Heading\", txt);\n  expect(txt).is.equal(\"Welcome Admin\");\n  });",
+                  "err": {},
+                  "uuid": "0aa540eb-5c1a-43ac-9655-39995aee132f",
+                  "parentUUID": "ea3353c8-e2bd-4107-8af3-ed0c09240dcb",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "0aa540eb-5c1a-43ac-9655-39995aee132f"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1520,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 50000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 50000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "autoOpen": "false"
+      },
+      "version": "4.0.1"
+    }
+  }
+}
